@@ -1,16 +1,22 @@
-# BusyQA-CRM
-This project contains BusyQA-CRM front-end and back-end
+See the configs for Front-End and Back-End Here.
 
+*For Front-End configuration you need to <br />
+1.keep port:4200 free to use<br />
+2.run "npm -install"<br />
 
-For **Front-End** configuration please run <br />
-```npm install``` <br />
-first to install node_module and all other dependent component. <br />
-please make sure that your **Port-4200** not occupied by other program.
-<br /><br /><br />
-For **Back-End** configuration please <br />
-**1. Firstly configure your DB schema by importing the script file in the root folder of repo.**<br />
-**2. Make sure there are no program running on port - 8080**<br />
-**3. Application.properties - Make sure you have meet all requirement and with correct DB username and password and port number**
+*For Back-End configuration you need to <br />
+1. Keep port:8080 free to use<br />
+2. Set the database as describe
+```Create database by running the code below**<br />
+```CREATE DATABASE `busyqacrm` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;```<br />
+**5. You can run the Junit-test if table not shows in when the first time server start**<br />
+**6. Please run the SQL command to insert data into Role table**<br />
+```INSERT INTO `busyqacrm`.`tbl_roles` (`id`, `description`, `name`) VALUES ('1', 'Admin', 'Admin');
+INSERT INTO `busyqacrmbackenddb`.`tbl_roles` (`id`, `description`) VALUES ('2', 'Manager','Manager');
+INSERT INTO `busyqacrmbackenddb`.`tbl_roles` (`id`, `description`) VALUES ('3', 'User','User');```
+
+4. Type the "application.properties" file as below
+
 
 ```server.port=8080
 server.servlet.context-path=/CRMBackend
@@ -38,12 +44,5 @@ trace=false
 
 
 
-**4. Create database by running the code below**<br />
-```CREATE DATABASE `busyqacrm` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;```<br />
-**5. You can run the Junit-test if table not shows in when the first time server start**<br />
-**6. Please run the SQL command to insert data into Role table**<br />
-```INSERT INTO `busyqacrm`.`tbl_roles` (`id`, `description`, `name`) VALUES ('1', 'Admin', 'Admin');
-INSERT INTO `busyqacrmbackenddb`.`tbl_roles` (`id`, `description`) VALUES ('2', 'Manager','Manager');
-INSERT INTO `busyqacrmbackenddb`.`tbl_roles` (`id`, `description`) VALUES ('3', 'User','User');```
 
 
