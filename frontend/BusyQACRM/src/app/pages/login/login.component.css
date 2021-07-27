@@ -1,0 +1,11 @@
+.img-fluid {
+    max-width: 30%;
+  }
+  
+  .btn {
+    width: 150px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    margin-left: 0;
+  }

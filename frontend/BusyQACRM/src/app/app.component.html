@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-success mb-3">
+  <a href="/home" class="navbar-brand">BusyQACRM</a>
+
+  <button
+    class="navbar-toggler"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="/home" class="nav-link" routerLink="home">Home </a>
+      </li>
+
+      <li class="nav-item">
+        <a
+          href="/welcome"
+          class="nav-link"
+          routerLink="welcome"
+          *ngIf="isLoggedIn"
+          >Welcome
+        </a>
+      </li>
+
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+      </li>
+      <li class="nav-item" *ngIf="showManagerBoard">
+        <a href="/manager" class="nav-link" routerLink="manager"
+          >Manager Board</a
+        >
+      </li>
+      <li class="nav-item">
+        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user"
+          >User</a
+        >
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">{{
+          username
+        }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+
+<footer id="main-footer" class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center py-4">
+        <h3>BusyQACRM</h3>
+        <p>Copyright &copy; XiaoHe@BusyQA <span id="year"></span></p>
+      </div>
+    </div>
+  </div>
+</footer>
