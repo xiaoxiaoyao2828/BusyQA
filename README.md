@@ -39,10 +39,10 @@ trace=false
 
 
 **4. Create database by running the code below**<br />
-```CREATE DATABASE `busyqacrmbackenddb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;```<br />
+```CREATE DATABASE `busyqacrm` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;```<br />
 **5. You can run the Junit-test if table not shows in when the first time server start**<br />
 **6. Please run the SQL command to insert data into Role table**<br />
-```INSERT INTO `busyqacrmbackenddb`.`tbl_roles` (`id`, `description`, `name`) VALUES ('1', 'Admin', 'Admin');
+```INSERT INTO `busyqacrm`.`tbl_roles` (`id`, `description`, `name`) VALUES ('1', 'Admin', 'Admin');
 INSERT INTO `busyqacrmbackenddb`.`tbl_roles` (`id`, `description`) VALUES ('2', 'Manager','Manager');
 INSERT INTO `busyqacrmbackenddb`.`tbl_roles` (`id`, `description`) VALUES ('3', 'User','User');```
 
