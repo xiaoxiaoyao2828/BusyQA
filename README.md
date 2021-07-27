@@ -6,8 +6,8 @@ See the configs for Front-End and Back-End Here.
 
 **For Back-End configuration you need to** <br />
 1. Keep port:8080 free to use<br />
-2. Set the database as describe
-#Create database by running the code below**<br />
+2. Set the database as describe<br />
+#Create database by running the code below<br />
 ```CREATE DATABASE `busyqacrm` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;```<br />
 ```INSERT INTO `busyqacrm`.`tbl_roles` (`id`, `description`, `name`) VALUES ('1', 'Admin', 'Admin');
 INSERT INTO `busyqacrm`.`tbl_roles` (`id`, `description`) VALUES ('2', 'Manager','Manager');
