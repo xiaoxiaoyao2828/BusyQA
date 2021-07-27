@@ -28,7 +28,7 @@ public class UserServiceTests {
 	@Test
 	public void testCreateNewUserWithSingleRolePasswordEncode() {
 		Role roleUser = entityManager.find(Role.class, 3);
-		User userLucas = new User("lucas9324", "Lucas", "Tom", "qqq542417349", "Lucas9324@outlook.com", "7364832234");
+		User userLucas = new User("Steven", "Steven", "Chow", "St55552222", "StevenChow@promobiz.ca", "8445669999");
 		userLucas.addRole(roleUser);
 
 		User savedUser = service.save(userLucas);
