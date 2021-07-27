@@ -1,6 +1,6 @@
 <div class="container-sm">
   <div class="col-md-12"></div>
-  <div class="card card-container">
+  <div class="card card-container col-md-4">
     <img
       id="BusyQA-icon"
       src="../../assets/img/busyqa-icon.jpg"
@@ -63,7 +63,9 @@
       >
     </div>
 
-    <div class="form-group">
+
+    <div class="form-row">
+    <div class="form-group col-md-6">
       <label for="" class="col-form-label">First Name</label>
       <input type="text" formControlName="firstname" class="form-control" />
       <small *ngIf="firstname.invalid && firstname.touched" class="text-danger">
@@ -71,12 +73,13 @@
       >
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-md-6">
       <label for="" class="col-form-label">Last Name</label>
       <input type="text" formControlName="lastname" class="form-control" />
       <small *ngIf="lastname.invalid && lastname.touched" class="text-danger">
         Last Name is required</small
       >
+    </div>
     </div>
 
     <div class="form-group">
