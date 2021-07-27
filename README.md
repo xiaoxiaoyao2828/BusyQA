@@ -10,8 +10,8 @@ See the configs for Front-End and Back-End Here.
 #Create database by running the code below**<br />
 ```CREATE DATABASE `busyqacrm` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;```<br />
 ```INSERT INTO `busyqacrm`.`tbl_roles` (`id`, `description`, `name`) VALUES ('1', 'Admin', 'Admin');
-INSERT INTO `busyqacrmbackenddb`.`tbl_roles` (`id`, `description`) VALUES ('2', 'Manager','Manager');
-INSERT INTO `busyqacrmbackenddb`.`tbl_roles` (`id`, `description`) VALUES ('3', 'User','User');
+INSERT INTO `busyqacrm`.`tbl_roles` (`id`, `description`) VALUES ('2', 'Manager','Manager');
+INSERT INTO `busyqacrm`.`tbl_roles` (`id`, `description`) VALUES ('3', 'User','User');
 
 3. Type the "application.properties" file as below<br />
 
