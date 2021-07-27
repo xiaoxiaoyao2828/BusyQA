@@ -27,8 +27,8 @@ public class UserRepositoryTests {
 	@Test
 	public void testCreateNewUserWithSingleRole() {
 		Role roleAdmin = entityManager.find(Role.class, 1);
-		User userPeiranLiu = new User("liupeiran9324", "Peiran", "Liu", "z1324356", "liupeiran9324@outlook.com",
-				"6476858067");
+		User userPeiranLiu = new User("Hexiao", "Xiao", "He", "Hx123456789", "xiaoxiaoyao2828@gmail.com",
+				"6478645596");
 		userPeiranLiu.addRole(roleAdmin);
 
 		User savedUser = repo.save(userPeiranLiu);
@@ -37,7 +37,7 @@ public class UserRepositoryTests {
 
 	@Test
 	public void testCreateNewUserWithMultiRoles() {
-		User userXiaoHe = new User("xiaohe9324", "Xiao", "He", "19930204", "xiaoxiaoyao2828@gmail.com", "6476463243");
+		User userXiaoHe = new User("Jerry12", "Jerry", "Li", "20210726333", "xiaoxiaoyao2828@126.com", "6479998888");
 		Role roleGeneralManager = new Role(2);
 		Role roleSimpleUser = new Role(3);
 
