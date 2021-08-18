@@ -2,6 +2,8 @@ package com.crmbackend.user;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -10,6 +12,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.annotation.Rollback;
 
+import com.crmbackend.allService.teamService.repo.TeamRepository;
+import com.crmbackend.allService.teamService.repo.TeamUserRepository;
 import com.crmbackend.allService.userService.repo.UserRepository;
 import com.crmbackend.entity.Role;
 import com.crmbackend.entity.User;
@@ -23,21 +27,25 @@ public class UserRepositoryTests {
 	private UserRepository repo;
 	@Autowired
 	private TestEntityManager entityManager;
+	@Autowired
+	private TeamRepository teamRepo;
+	@Autowired
+	private TeamUserRepository teamUserRepo;
 
 	@Test
 	public void testCreateNewUserWithSingleRole() {
 		Role roleAdmin = entityManager.find(Role.class, 1);
-		User userPeiranLiu = new User("Hexiao", "Xiao", "He", "Hx123456789", "xiaoxiaoyao2828@gmail.com",
-				"6478645596");
-		userPeiranLiu.addRole(roleAdmin);
+		User userJiahuaHe = new User("hejiahua1234", "Jiahua", "He", "JH123456789", "xiaoxiaoyao2828@126.com",
+				"6478889988");
+		userJiahuaHe.addRole(roleAdmin);
 
-		User savedUser = repo.save(userPeiranLiu);
+		User savedUser = repo.save(userJiahuaHe);
 		assertThat(savedUser.getId()).isGreaterThan(0);
 	}
 
 	@Test
 	public void testCreateNewUserWithMultiRoles() {
-		User userXiaoHe = new User("Jerry12", "Jerry", "Li", "20210726333", "xiaoxiaoyao2828@126.com", "6479998888");
+		User userXiaoHe = new User("xiaohe9324", "Xiao", "He", "19930204", "xiaoxiaoyao2828@gmail.com", "6476463243");
 		Role roleGeneralManager = new Role(2);
 		Role roleSimpleUser = new Role(3);
 
@@ -50,27 +58,27 @@ public class UserRepositoryTests {
 
 	@Test
 	public void testGetUserById() {
-		User userPeiran = repo.findById(3).get();
-		assertThat(userPeiran).isNotNull();
+		User userJiahuaHe = repo.findById(3).get();
+		assertThat(userJiahuaHe).isNotNull();
 	}
 
 	@Test
 	public void testGetUserByEmail() {
-		User userPeiran = repo.getUserByEmail(("liupeiran9324@Outlook.com").toLowerCase()).get();
-		assertThat(userPeiran).isNotNull();
+		User userJiahuaHe = repo.getUserByEmail(("xiaoxiaoyao2828@126.com").toLowerCase()).get();
+		assertThat(userJiahuaHe).isNotNull();
 	}
 
 	@Test
 	public void testExistUsername() {
-		Boolean result = repo.existsByUsername(("ddddd"));
+		Boolean result = repo.existsByUsername(("abcde"));
 		assertThat(result).isTrue();
 	}
 
 	@Test
 	public void testGetUserByUsername() {
-		User userPeiran = repo.getUserByUsername("liupeiran9324").get();
-		System.out.println(userPeiran);
-		assertThat(userPeiran).isNotNull();
+		User userJiahuaHe = repo.getUserByUsername("hejiahua1234").get();
+		System.out.println(userJiahuaHe);
+		assertThat(userJiahuaHe).isNotNull();
 	}
 
 	@Test
@@ -79,6 +87,13 @@ public class UserRepositoryTests {
 		long count = repo.countById(id);
 		System.out.println(count);
 		assertThat(count).isGreaterThan(0);
+	}
+
+	@Test
+	public void testFetchTeams() {
+		List<Object> team = teamRepo.getAllTeamAndDetails();
+		System.out.println(team);
+
 	}
 
 }
